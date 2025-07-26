@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaled Moawad - Senior AI/ML Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #e0e0e0;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #bbb;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #00d4ff;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+        }
+
+        .experience-item h3 {
+            color: #00d4ff;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .company {
+            color: #ccc;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .duration {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .project-card h3 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #000;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Education Section */
+        .education-item {
+            background: #111;
+            border-left: 4px solid #00d4ff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .education-item h3 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            color: #ccc;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .duration {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #111;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #00d4ff;
+        }
+
+        .contact-item a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #00d4ff;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Khaled Moawad</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>Khaled Moawad</h1>
+                <h2>Senior AI/ML Engineer</h2>
+                <p>I'm a Senior AI/ML Engineer currently completing my Master's in Computer Science and AI. I specialize in computer vision and NLP, transforming AI concepts into production-ready solutions that make real impact.</p>
+                <a href="#contact" class="cta-button">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item fade-in-up">
+                <h3>AI Engineer</h3>
+                <div class="company">Lumin Soft</div>
+                <div class="duration">Mar 2024 – Ongoing</div>
+                <p>Working on real-time projects involving object detection, pose estimation, segmentation, and developing automatic annotation tools. Handling deployment phases, utilizing EC2 instances and internal servers, following Agile methodologies with Microsoft Azure DevOps.</p>
+            </div>
+
+            <div class="experience-item fade-in-up">
+                <h3>AI Engineer</h3>
+                <div class="company">Perpartners UK</div>
+                <div class="duration">Jan 2023 – Feb 2024</div>
+                <p>Responsible for OCR tasks including data collection, annotation, object detection, text recognition, and model deployment. Developed automation tools like workflow management systems. Utilized AWS services such as SageMaker and EC2, employed Agile methodologies (Azure DevOps, Linear, Jira).</p>
+            </div>
+
+            <div class="experience-item fade-in-up">
+                <h3>AI Engineer</h3>
+                <div class="company">Nile University</div>
+                <div class="duration">Oct 2021 – Dec 2022</div>
+                <p>Implemented research projects in data science, computer vision, deep learning, and machine learning, from data collection and cleaning to model development and deployment.</p>
+            </div>
+
+            <div class="experience-item fade-in-up">
+                <h3>Software Engineer</h3>
+                <div class="company">Life Care Technology Company (Dräger)</div>
+                <div class="duration">Oct 2020 – Sep 2021</div>
+                <p>Developed software solutions for medical technology applications, focusing on reliable and efficient system implementations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in-up">
+                    <h3>STATISTA: AI Football Analysis Engine</h3>
+                    <p>Built an AI engine to process football match videos and automatically extract key performance metrics including physical measurements, pass types, attack patterns, and possession. Applied computer vision techniques like object detection, segmentation, camera calibration, action recognition, and player re-identification. Deployed using FastAPI with MongoDB integration.</p>
+                </div>
+
+                <div class="project-card fade-in-up">
+                    <h3>Voice-to-Voice Chatbot</h3>
+                    <p>Developed a voice-interactive chatbot with a multi-stage pipeline including Speech-to-Text, LLM with RAG, and Text-to-Speech. Created custom embedding models, STT, TTS, and RAG system. Utilized FAISS and Qdrant vector databases for semantic search. Built custom annotation tools and deployed using Flask and FastAPI.</p>
+                </div>
+
+                <div class="project-card fade-in-up">
+                    <h3>EKYC National ID OCR System</h3>
+                    <p>Developed a custom OCR pipeline for Egyptian national ID cards using tailored text detection models. Implemented three separate recognition models for different text types. Achieved high accuracy with integrated liveness and fraud detection. Outperformed famous OCR engines like Qwen and Azure.</p>
+                </div>
+
+                <div class="project-card fade-in-up">
+                    <h3>MSMatch: Semi-Supervised Satellite Classification</h3>
+                    <p>Applied Semi-Supervised technique (MSMatch) to satellite images addressing labeled data scarcity. Used EuroSat(RGB and MS), LandCover.ai, and Floodnet benchmark datasets. Achieved high results across different experiments using PyTorch and local GPU.</p>
+                </div>
+
+                <div class="project-card fade-in-up">
+                    <h3>AI Trainer - Exercise Form Analysis</h3>
+                    <p>Developed a system using pose estimation to track body keypoints and calculate joint angles for exercise evaluation. Custom logic for different exercises (Squats, Push-ups, Pull-ups) with error identification and voice feedback. Incorporated dual camera setup for comprehensive form analysis.</p>
+                </div>
+
+                <div class="project-card fade-in-up">
+                    <h3>Multiclass ROP Classification System</h3>
+                    <p>Built a robust pipeline for multiclass classification of Retinopathy of Prematurity into five categories. Integrated segmentation using U-Net++ for retinal blood vessels and MedSAM for ridge-like features. Fused segmented features with original images, significantly boosting accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2>Education</h2>
+            
+            <div class="education-item fade-in-up">
+                <h3>M.Sc. in Computer Science and AI</h3>
+                <div class="institution">Nile University</div>
+                <div class="duration">Jan 2022 – Ongoing</div>
+                <p>Accumulative grade: Excellent with Honors with a GPA 3.97/4.</p>
+            </div>
+
+            <div class="education-item fade-in-up">
+                <h3>B.Sc. in Biomedical Engineering</h3>
+                <div class="institution">Mansoura University</div>
+                <div class="duration">Sept 2014 – June 2019</div>
+                <p>Overall grade: Excellent with Honors with a GPA 3.99/4. Overall percentage: 97.44%. Ranked 1st in the department out of 120 students.</p>
+            </div>
+
+            <div class="education-item fade-in-up">
+                <h3>Programming Diploma</h3>
+                <div class="institution">ITI (Information Technology Institute)</div>
+                <div class="duration">June 2018 – Sep 2018</div>
+                <p>Comprehensive programming training and certification.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">C++</div>
+                <div class="skill-tag">Linux</div>
+                <div class="skill-tag">LaTeX</div>
+                <div class="skill-tag">Git</div>
+                <div class="skill-tag">PyTorch</div>
+                <div class="skill-tag">TensorFlow</div>
+                <div class="skill-tag">Docker</div>
+                <div class="skill-tag">FastAPI</div>
+                <div class="skill-tag">MongoDB</div>
+                <div class="skill-tag">AWS</div>
+                <div class="skill-tag">SageMaker</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">NoSQL</div>
+                <div class="skill-tag">Kubernetes</div>
+            </div>
+            
+            <h3 style="text-align: center; margin-top: 3rem; margin-bottom: 2rem; color: #00d4ff;">Areas of Interest</h3>
+            <div class="skills-container">
+                <div class="skill-tag">Artificial Intelligence</div>
+                <div class="skill-tag">Computer Vision</div>
+                <div class="skill-tag">Natural Language Processing</div>
+                <div class="skill-tag">Machine Learning</div>
+                <div class="skill-tag">Data Science</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p style="text-align: center; color: #ccc; margin-bottom: 2rem;">Ready to turn AI concepts into impactful solutions? Let's discuss your next project.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+1234567890">Phone</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:khaled@example.com">Email</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/khaled-moawad" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/khaledmoawad" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Khaled Moawad. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-up elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
