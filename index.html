@@ -188,33 +188,6 @@
             max-width: 680px;
         }
 
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 7px 18px 7px 12px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-        }
-
-        .hero-tag .dot {
-            width: 8px; height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(34,197,94,0.5);
-            animation: blink 2.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
         .hero h1 {
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 700;
@@ -235,15 +208,6 @@
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-        }
-
-        .hero-subtitle {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 1.75rem;
-            letter-spacing: -0.01em;
         }
 
         .hero-desc {
@@ -419,14 +383,14 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--border);
+            color: #333;
             line-height: 1;
             margin-bottom: 1.25rem;
             transition: color 0.3s ease;
         }
 
         .p-card:hover .p-num {
-            color: var(--border-hover);
+            color: var(--accent-1);
         }
 
         .p-card h3 {
@@ -827,13 +791,8 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-tag sr">
-                    <span class="dot"></span>
-                    Open to new opportunities
-                </div>
-                <h1 class="sr">Senior AI &<br><span class="line-2">ML Engineer</span></h1>
-                <p class="hero-subtitle sr">Building intelligent systems from research to production.</p>
-                <p class="hero-desc sr">I'm Khaled Moawad -- experienced across the full AI lifecycle, from computer vision (detection, tracking, segmentation, GANs, 3D reconstruction) to NLP (voice chatbots, RAG agents, speech pipelines). I architect and ship production-ready solutions with PyTorch, Docker, FastAPI, AWS, and Kubernetes.</p>
+                <h1 class="sr">Senior AI/ML<br><span class="line-2">Engineer</span></h1>
+                <p class="hero-desc sr">I'm Khaled Moawad, a Senior AI/ML Engineer in the final stages of completing my Master's degree in Computer Science and Artificial Intelligence. I have a strong foundation in software development, having progressed from junior to senior roles, with expertise spanning both Computer Vision and Natural Language Processing. In Computer Vision, I've developed systems for segmentation, detection, object tracking, identification, GAN-based image generation, super-resolution, and 3D reconstruction. On the NLP side, I've built voice-to-voice chatbots, speech-to-text and text-to-speech pipelines, RAG-based AI agents, sentiment analysis systems, and more. I've led and contributed to projects including football video analysis engines, medical OCR pipelines, and domain-specific conversational agents. My skill set covers the full AI lifecycle -- from data processing and model development to scalable deployment. I'm driven by a focus on delivering impactful, production-ready AI solutions, whether working independently or as part of a collaborative team.</p>
                 <div class="hero-btns sr">
                     <a href="#contact" class="btn btn-fill">
                         Get in Touch
@@ -857,8 +816,8 @@
                 <div class="stat-label">M.Sc. GPA / 4.0</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num">10+</div>
-                <div class="stat-label">AI Projects Shipped</div>
+                <div class="stat-num">3.99</div>
+                <div class="stat-label">B.Sc. GPA / 4.0</div>
             </div>
             <div class="stat-item">
                 <div class="stat-num">#1</div>
@@ -894,7 +853,7 @@
                     </div>
                     <div class="exp-body">
                         <h3>AI Engineer</h3>
-                        <p>Responsible for OCR tasks including data collection, annotation, object detection, text recognition, and deploying models. Developed automation tools like workflow management systems. Utilized AWS SageMaker, EC2, and Agile methodologies (Azure DevOps, Linear, Jira).</p>
+                        <p>Responsible for handling OCR tasks, including data collection, annotation, object detection, text recognition, and deploying models, while also developing automation tools like workflow management systems to support the team. Additionally, utilized AWS services such as SageMaker and EC2, and employed Agile methodologies (Azure DevOps, Linear, Jira) to ensure smooth project execution.</p>
                     </div>
                 </div>
                 <div class="exp-item">
@@ -910,7 +869,7 @@
                 <div class="exp-item">
                     <div class="exp-meta">
                         <span class="date">Oct 2020 &mdash; Sep 2021</span>
-                        <span class="company">Drager (Life Care Tech)</span>
+                        <span class="company">Life Care Technology Company (Drager)</span>
                     </div>
                     <div class="exp-body">
                         <h3>Software Engineer</h3>
@@ -934,7 +893,7 @@
                 <div class="p-card">
                     <div class="p-num">01</div>
                     <h3>STATISTA: AI Football Analysis Engine</h3>
-                    <p>AI engine processing football match videos to extract performance metrics -- pass types, attack patterns, possession, set pieces. Uses detection, segmentation, camera calibration, tracking, and re-identification. Deployed with FastAPI + MongoDB.</p>
+                    <p>Built an AI engine to process football match videos and automatically extract key performance metrics, including physical measurements, pass types, attack patterns, possession, ball losses/recoveries, set pieces, and other football actions. The system utilized a wide range of Computer Vision techniques such as object detection, tiny object segmentation, camera calibration, action recognition, object tracking, and player re-identification. It was deployed using FastAPI with MongoDB integration for efficient data storage and retrieval.</p>
                     <div class="p-tags">
                         <span class="p-tag">Computer Vision</span>
                         <span class="p-tag">FastAPI</span>
@@ -944,7 +903,7 @@
                 <div class="p-card">
                     <div class="p-num">02</div>
                     <h3>Voice-to-Voice Chatbot</h3>
-                    <p>Multi-stage voice chatbot: STT, RAG system with LLM, and TTS. Custom embeddings, annotation tools, FAISS and Qdrant vector databases. Excellent domain-specific results. Deployed via Flask and FastAPI.</p>
+                    <p>Developed a voice-interactive chatbot that enables users to input queries via speech and receive spoken responses. The system was built as a multi-stage pipeline comprising Speech-to-Text (STT), a Retrieval-Augmented Generation (RAG) system powered by a Large Language Model (LLM), and Text-to-Speech (TTS). Custom components were created for embeddings, STT, TTS, and the RAG system, achieving excellent domain-specific results. FAISS and Qdrant vector databases were used to ensure efficient semantic search and retrieval. To support training, custom annotation tools were built to streamline dataset creation and labeling. The solution was deployed using both Flask and FastAPI, allowing for flexible integration across platforms.</p>
                     <div class="p-tags">
                         <span class="p-tag">NLP</span>
                         <span class="p-tag">RAG</span>
@@ -953,8 +912,8 @@
                 </div>
                 <div class="p-card">
                     <div class="p-num">03</div>
-                    <h3>EKYC National ID OCR</h3>
-                    <p>Custom OCR pipeline for Egyptian national IDs with specialized detection and three recognition models. Outperforms Qwen and Azure OCR. Includes liveness and fraud detection.</p>
+                    <h3>EKYC National ID OCR System</h3>
+                    <p>Developed a custom OCR pipeline for Egyptian national ID cards using specialized text detection models and three dedicated recognition models tailored for ID numbers, manufacturer numbers, and general text. The system achieved high accuracy in text extraction and recognition, outperforming well-known OCR engines such as Qwen and Azure. To enhance security, liveness detection and fraud detection mechanisms were integrated. The solution was deployed using FastAPI, enabling smooth integration into existing systems.</p>
                     <div class="p-tags">
                         <span class="p-tag">OCR</span>
                         <span class="p-tag">Detection</span>
@@ -963,8 +922,8 @@
                 </div>
                 <div class="p-card">
                     <div class="p-num">04</div>
-                    <h3>Sales Data Insights Dashboard</h3>
-                    <p>Analyzed sales history for marketing strategy. Dynamic Power BI dashboard with customer retention, segmentation, ABC analysis, and metric tracking. Designed feedback analysis forms.</p>
+                    <h3>Sales Data Insights and Customer Segmentation Dashboard for Marketing Strategy</h3>
+                    <p>Led a project to analyze a client's sales history and customer data, delivering key insights to support their marketing strategy and loyalty program. Using Power BI, I developed a dynamic, scalable dashboard that visualizes customer retention, segmentation, top-selling products, and ABC analysis for both customers and products, with monthly and quarterly metric tracking. Additionally, I designed feedback analysis forms to monitor customer complaints and contributed to refining the marketing approach based on ongoing results.</p>
                     <div class="p-tags">
                         <span class="p-tag">Power BI</span>
                         <span class="p-tag">Analytics</span>
@@ -973,7 +932,7 @@
                 <div class="p-card">
                     <div class="p-num">05</div>
                     <h3>AI Trainer - Exercise Form Analysis</h3>
-                    <p>Pose estimation system tracking keypoints and joint angles. Custom logic for Squats, Push-ups, Pull-ups with corrective voice feedback. Dual-camera setup for comprehensive analysis.</p>
+                    <p>Developed a system that uses pose estimation to track body keypoints and calculate joint angles for precise evaluation of exercise performance. Custom logic was implemented for each exercise type (Squats, Push-ups, Pull-ups) to differentiate between successful and unsuccessful repetitions. When a rep is identified as incorrect, the system pinpoints the specific error and delivers corrective feedback through voice instructions. The setup includes both front and side cameras to capture a comprehensive range of angles, enabling accurate form analysis and correction.</p>
                     <div class="p-tags">
                         <span class="p-tag">Pose Estimation</span>
                         <span class="p-tag">Real-time</span>
@@ -981,8 +940,8 @@
                 </div>
                 <div class="p-card">
                     <div class="p-num">06</div>
-                    <h3>Multiclass ROP Classification</h3>
-                    <p>Retinopathy of Prematurity classification into five categories. U-Net++ for vessel segmentation, MedSAM + YOLOv11 for ridge detection. Feature fusion for significant accuracy gains.</p>
+                    <h3>Multiclass ROP Classification System</h3>
+                    <p>Built a robust pipeline for the multiclass classification of Retinopathy of Prematurity (ROP) into five distinct categories. The process began with the collection of medical retinal images from hospitals, followed by annotation and data refinement using custom filtering tools. Grad-CAM analysis showed that the classifier focused on critical pathological regions, which led to the integration of segmentation for added context. A U-Net++ model was trained on a custom dataset to segment retinal blood vessels, while ridge-like features were segmented using the zero-shot MedSAM model after detection with YOLOv11. These segmented features were fused with the original images prior to classification, resulting in a significant boost in accuracy and highly reliable outcomes.</p>
                     <div class="p-tags">
                         <span class="p-tag">Medical AI</span>
                         <span class="p-tag">Segmentation</span>
@@ -1017,7 +976,7 @@
                         <h3>B.Sc. in Biomedical Engineering</h3>
                         <div class="institution">Mansoura University</div>
                         <div class="date">Sep 2014 &mdash; Jun 2019</div>
-                        <p>Overall grade: Excellent with Honors, GPA 3.99/4. Overall percentage: 97.44%. Ranked 1st out of 120 students.</p>
+                        <p>Overall grade: Excellent with Honors with a GPA 3.99/4. Overall percentage: 97.44%. Ranked 1st in the department out of 120 students.</p>
                     </div>
                 </div>
                 <div class="edu-item">
